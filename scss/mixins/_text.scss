@@ -1,0 +1,12 @@
+@mixin textRegular-10 {
+  color: aqua; // варейблс
+  font-family: "Courier New", Courier, monospace; // варейблс
+  font-size: 10px;
+  font-weight: 400; // варейблс
+  line-height: 12px;
+}
+
+@mixin textBold-10 {
+  @include textRegular-10();
+  font-weight: 700; // варейблс
+}

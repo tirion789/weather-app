@@ -1,0 +1,13 @@
+@import "src/scss/mixins/reset.scss";
+
+.filled {
+  @include button-style-clear();
+  background-color: red;
+}
+
+.unfilled {
+  @include button-style-clear();
+  background-color: aqua;
+  border-radius: 5px;
+  padding: 10px;
+}

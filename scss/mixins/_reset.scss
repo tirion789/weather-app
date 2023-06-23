@@ -1,0 +1,16 @@
+@mixin list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// reset-button и т.д
+
+@mixin button-style-clear {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
