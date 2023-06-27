@@ -1,1 +1,35 @@
-@import "src/scss/variables.scss";
+@import "scss/variables.scss";
+@import "scss/mixins/reset.scss";
+@import "scss/mixins/text.scss";
+@import "scss/mixins/utility.scss";
+
+.container {
+  color: $light-slate-gray;
+  position: relative;
+}
+
+.icon {
+  @include absolute-center();
+  right: 20px;
+}
+
+.input {
+  @include reset-input();
+  @include textRegular();
+  background-color: inherit;
+  border: 1px solid $basic-grey;
+  border-radius: 5px;
+  padding: 11px 45px 11px 11px;
+
+  &:focus {
+    border-color: $basic-black;
+  }
+
+  &::placeholder {
+    color: $light-slate-gray;
+  }
+}
+
+.disabled {
+  background-color: $basic-grey;
+}

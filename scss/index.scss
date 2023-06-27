@@ -1,1 +1,7 @@
-@import "src/scss/variables.scss";
+@import "scss/variables.scss";
+@import "scss/fonts.scss";
+@import "scss/mixins/reset.scss";
+@import "scss/mixins/text.scss";
+@import "scss/mixins/common.scss";
+@import "scss/mixins/breakpoints.scss";
+@import "scss/mixins/utility.scss";
