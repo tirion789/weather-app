@@ -1,0 +1,6 @@
+@mixin absolute-center {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

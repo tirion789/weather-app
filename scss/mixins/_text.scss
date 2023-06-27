@@ -1,12 +1,27 @@
-@mixin textRegular-10 {
-  color: aqua; // варейблс
-  font-family: "Courier New", Courier, monospace; // варейблс
-  font-size: 10px;
-  font-weight: 400; // варейблс
-  line-height: 12px;
+@import "scss/variables.scss";
+
+@mixin textRegular {
+  color: $light-slate-gray;
+  font-family: $font-family-source-code-pro;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 20px;
 }
 
 @mixin textBold-10 {
   @include textRegular-10();
-  font-weight: 700; // варейблс
+  font-weight: $font-weight-bold;
 }
+
+// @mixin textRegular-10 {
+//   color: aqua; // варейблс
+//   font-family: "Courier New", Courier, monospace; // варейблс
+//   font-size: 10px;
+//   font-weight: 400; // варейблс
+//   line-height: 12px;
+// }
+
+// @mixin textBold-10 {
+//   @include textRegular-10();
+//   font-weight: 700; // варейблс
+// }
