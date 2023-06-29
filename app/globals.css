@@ -1,8 +1,0 @@
-body {
-  display: grid;
-  grid-template-rows: max-content 1fr max-content;
-  margin: 0 auto;
-  max-width: 1240px;
-  min-height: 100vh;
-  text-size-adjust: none;
-}

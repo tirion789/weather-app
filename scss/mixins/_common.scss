@@ -1,1 +1,23 @@
-@import "src/scss/variables.scss";
+body {
+  background-color: $basic-platinum;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  margin: 0 auto;
+  max-width: 1512px;
+  min-height: 100vh;
+  text-size-adjust: none;
+}
+
+html[data-theme="dark"] {
+  --body-background-color: $dark-blue;
+  --border-color: $basic-white;
+  --text-color: $basic-white;
+  --background-container-color: $blue-steel;
+}
+
+html[data-theme="light"] {
+  --body-background-color: $basic-platinum;
+  --border-color: $basic-grey;
+  --text-color: $dark-blue;
+  --background-container-color: $periwinkle-crayola;
+}

@@ -4,13 +4,19 @@
   padding: 0;
 }
 
-// reset-button и т.д
-
-@mixin button-style-clear {
-  background-color: transparent;
+@mixin reset-button {
+  background-color: none;
   border: none;
   color: inherit;
   cursor: pointer;
   font: inherit;
+  outline: none;
+  padding: 0;
+}
+
+@mixin reset-input {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
   padding: 0;
 }

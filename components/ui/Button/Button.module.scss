@@ -1,13 +1,55 @@
-@import "src/scss/mixins/reset.scss";
+@import "scss/mixins/reset.scss";
+@import "scss/mixins/text.scss";
+@import "scss/mixins/utility.scss";
+@import "scss/variables.scss";
 
-.filled {
-  @include button-style-clear();
-  background-color: red;
+.button {
+  @include reset-button();
+  @include focus();
+  background-color: transparent;
+  border: 1px solid $basic-grey;
+  border-radius: 8px;
+  color: $light-slate-gray;
+  padding: 12px 13px;
+  position: relative;
+
+  &::before {
+    background: rgba($basic-white, 0.2);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all $animation-time ease;
+    width: 0;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
-.unfilled {
-  @include button-style-clear();
-  background-color: aqua;
-  border-radius: 5px;
-  padding: 10px;
+.label {
+  @include textRegular-16();
+  color: $light-slate-gray;
+}
+
+.disabled {
+  background-color: rgba($basic-grey, 0.2);
+  pointer-events: none;
+}
+
+.button_icon {
+  padding: 12px 13px 12px 35px;
+}
+
+.icon {
+  @include vertical-center();
+  display: flex;
+  left: 10px;
 }
