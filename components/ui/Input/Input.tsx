@@ -20,7 +20,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const inputClassName = classNames(styles.container, className, isDisabled && styles.disabled);
 
-    // test
     return (
       <div className={inputClassName}>
         {icon && <span className={styles.icon}>{icon}</span>}
