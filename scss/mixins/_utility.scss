@@ -1,11 +1,23 @@
-@mixin absolute-center {
+@import "scss/variables.scss";
+
+@mixin vertical-center {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@mixin focus-elements {
+@mixin focus {
+  outline: none;
+
   &:focus:not(:disabled) {
-    box-shadow: 0 0 30px 0 rgba($ocean-blue, 0.35);
+    box-shadow: $basic-box-shadow;
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+
+  &:focus-visible:not(:disabled) {
+    box-shadow: $basic-box-shadow;
   }
 }

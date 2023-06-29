@@ -9,19 +9,24 @@
 }
 
 .icon {
-  @include absolute-center();
+  @include vertical-center();
   display: flex;
   right: 17px;
 }
 
 .input {
   @include reset-input();
-  @include textRegular();
-  @include focus-elements();
+  @include textRegular-16();
+  @include focus();
   background-color: inherit;
   border: 1px solid $basic-grey;
   border-radius: 8px;
+  color: $light-slate-gray;
   padding: 12px 40px 12px 13px;
+
+  &:disabled {
+    background-color: rgba($basic-grey, 0.2);
+  }
 
   &::placeholder {
     color: $light-slate-gray;
@@ -29,5 +34,5 @@
 }
 
 .disabled {
-  background-color: rgba($basic-grey, 0.2);
+  pointer-events: none;
 }

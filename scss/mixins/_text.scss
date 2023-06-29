@@ -1,14 +1,53 @@
 @import "scss/variables.scss";
 
-@mixin textRegular {
-  color: $light-slate-gray;
+@mixin basic-text {
+  color: $dark-blue;
   font-family: $font-family-source-code-pro;
-  font-size: 16px;
-  font-weight: $font-weight-regular;
   line-height: normal;
 }
 
-@mixin textBold {
-  @include textRegular();
+@mixin textRegular-16 {
+  @include basic-text();
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin textBold-16 {
+  @include textRegular-16();
+  font-weight: $font-weight-bold;
+}
+
+@mixin textLight-112 {
+  @include basic-text();
+  font-size: 112px;
+  font-weight: $font-weight-light;
+}
+
+@mixin textRegular-28 {
+  @include basic-text();
+  font-size: 28px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin textBold-32 {
+  @include basic-text();
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+}
+
+@mixin textRegular-20 {
+  @include basic-text();
+  font-size: 20px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin textBold-20 {
+  @include textRegular-20();
+  font-weight: $font-weight-bold;
+}
+
+@mixin textBold-14 {
+  @include basic-text();
+  font-size: 14px;
   font-weight: $font-weight-bold;
 }

@@ -5,7 +5,7 @@
 
 .button {
   @include reset-button();
-  @include focus-elements();
+  @include focus();
   background-color: transparent;
   border: 1px solid $basic-grey;
   border-radius: 8px;
@@ -35,7 +35,8 @@
 }
 
 .label {
-  @include textRegular();
+  @include textRegular-16();
+  color: $light-slate-gray;
 }
 
 .disabled {
@@ -48,7 +49,7 @@
 }
 
 .icon {
-  @include absolute-center();
+  @include vertical-center();
   display: flex;
   left: 10px;
 }

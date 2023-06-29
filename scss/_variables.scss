@@ -1,9 +1,17 @@
+// MEDIA POINTS
 $tablet-width: 768px;
 $laptop-width: 1024px;
 $desktop-width: 1280px;
+
+// FONT FAMILY
 $font-family-source-code-pro: "Source Code Pro", monospace;
+
+// FONT WEIGHTS
+$font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
+
+// COLORS
 $basic-grey: #97a1bc;
 $basic-black: #000000;
 $basic-white: #ffffff;
@@ -13,4 +21,9 @@ $dark-blue: #020419;
 $ocean-blue: #223c50;
 $light-slate-gray: #707b99;
 $basic-platinum: #e0e5ec;
+
+// ANIMATIONS
 $animation-time: 0.2s;
+
+// BOX-SHADOWS
+$basic-box-shadow: 0 0 0 1px transparent, 0 0 0 2px #223c50;

@@ -7,4 +7,5 @@ export interface InputProps {
   placeholder?: string;
   isDisabled?: boolean;
   icon?: ReactNode;
+  className?: string;
 }
