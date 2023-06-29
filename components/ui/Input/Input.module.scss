@@ -10,20 +10,18 @@
 
 .icon {
   @include absolute-center();
-  right: 20px;
+  display: flex;
+  right: 17px;
 }
 
 .input {
   @include reset-input();
   @include textRegular();
+  @include focus-elements();
   background-color: inherit;
   border: 1px solid $basic-grey;
-  border-radius: 5px;
-  padding: 11px 45px 11px 11px;
-
-  &:focus {
-    border-color: $basic-black;
-  }
+  border-radius: 8px;
+  padding: 12px 40px 12px 13px;
 
   &::placeholder {
     color: $light-slate-gray;
@@ -31,5 +29,5 @@
 }
 
 .disabled {
-  background-color: $basic-grey;
+  background-color: rgba($basic-grey, 0.2);
 }

@@ -5,23 +5,10 @@
   font-family: $font-family-source-code-pro;
   font-size: 16px;
   font-weight: $font-weight-regular;
-  line-height: 20px;
+  line-height: normal;
 }
 
-@mixin textBold-10 {
-  @include textRegular-10();
+@mixin textBold {
+  @include textRegular();
   font-weight: $font-weight-bold;
 }
-
-// @mixin textRegular-10 {
-//   color: aqua; // варейблс
-//   font-family: "Courier New", Courier, monospace; // варейблс
-//   font-size: 10px;
-//   font-weight: 400; // варейблс
-//   line-height: 12px;
-// }
-
-// @mixin textBold-10 {
-//   @include textRegular-10();
-//   font-weight: 700; // варейблс
-// }

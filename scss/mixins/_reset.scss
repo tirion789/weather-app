@@ -5,11 +5,12 @@
 }
 
 @mixin reset-button {
-  background-color: transparent;
+  background-color: none;
   border: none;
   color: inherit;
   cursor: pointer;
   font: inherit;
+  outline: none;
   padding: 0;
 }
 
