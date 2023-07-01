@@ -1,0 +1,40 @@
+@import "scss/variables.scss";
+@import "scss/mixins/reset.scss";
+@import "scss/mixins/text.scss";
+@import "scss/mixins/utility.scss";
+
+.container {
+  min-width: 174px;
+  position: relative;
+}
+
+.select_list {
+  @include list-style-none();
+  background-color: inherit;
+  border: 1px $basic-grey solid;
+  border-radius: 8px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+
+.select_list_item {
+  @include textRegular-16();
+  border-radius: 8px;
+  color: $light-slate-gray;
+  cursor: pointer;
+  padding: 10px;
+  text-align: left;
+
+  &:hover {
+    background-color: $basic-white;
+  }
+}
+
+.button {
+  span {
+    svg {
+      transition: 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    }
+  }
+}

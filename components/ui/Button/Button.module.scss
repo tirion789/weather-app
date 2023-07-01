@@ -34,6 +34,11 @@
   }
 }
 
+.select {
+  text-align: left;
+  width: 100%;
+}
+
 .label {
   @include textRegular-16();
   color: $light-slate-gray;
