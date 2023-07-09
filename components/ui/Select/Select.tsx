@@ -1,41 +1,55 @@
 'use client';
-
 import classNames from 'classnames';
+import { useRef, useState } from 'react';
 
-import { Button } from '@ui/Button/Button';
+import ArrowIcon from '@assets/icons/arrow.svg';
+import { Button } from '@ui/Button';
+import { useOutsideClick } from 'hooks/useOutsideClick';
 
-import styles from './Select.module.scss';
 import { SelectProps } from './Select.props';
+import styles from './Select.module.scss';
 
 export const Select = ({
-  list,
-  onClickButtonOpen,
-  isOpen,
+  options,
   onClickItem,
-  icon,
-  label,
+  currentOption,
   className,
-  isDisabled = false,
+  isDisabled,
+  placeholder,
 }: SelectProps) => {
-  const filteredArray = label ? list.filter((string) => string !== label) : list;
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
+
+  const handleClickOpenSelect = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  useOutsideClick(selectRef, () => setIsOpen(false));
 
   const selectClassName = classNames(styles.container, className);
+
   return (
-    <div className={selectClassName}>
-      <span className={styles.button}>
-        <Button
-          isDisabled={isDisabled}
-          theme="select"
-          icon={icon}
-          onClick={onClickButtonOpen}
-          label={label}
-        />
-      </span>
+    <div ref={selectRef} className={selectClassName}>
+      <Button
+        isDisabled={isDisabled}
+        icon={
+          isOpen ? (
+            <ArrowIcon className={styles.animation_icon} transform="rotate(180)" />
+          ) : (
+            <ArrowIcon className={styles.animation_icon} />
+          )
+        }
+        onClick={handleClickOpenSelect}
+        label={currentOption || placeholder}
+        className={styles.select}
+      />
       {isOpen && (
         <ul className={styles.select_list}>
-          {filteredArray.map((item) => (
-            <li onClick={() => onClickItem(item)} className={styles.select_list_item} key={item}>
-              {item}
+          {options.map(({ value, id }) => (
+            <li key={id}>
+              <button onClick={() => onClickItem(value)} className={styles.button}>
+                {value}
+              </button>
             </li>
           ))}
         </ul>

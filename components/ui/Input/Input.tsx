@@ -6,16 +6,7 @@ import styles from './Input.module.scss';
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    {
-      value,
-      onChange,
-      placeholder,
-      icon,
-      type = 'text',
-      isDisabled = false,
-      inputMod = 'text',
-      className,
-    },
+    { value, onChange, placeholder, icon, type = 'text', isDisabled, inputMod = 'text', className },
     ref
   ) => {
     const inputClassName = classNames(styles.container, className, isDisabled && styles.disabled);

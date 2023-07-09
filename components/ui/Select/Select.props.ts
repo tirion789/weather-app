@@ -1,12 +1,13 @@
-import { ReactNode } from 'react';
+type OptionsType = {
+  id: number;
+  value: string;
+};
 
 export interface SelectProps {
-  list: string[];
-  onClickButtonOpen: () => void;
+  options: OptionsType[];
   onClickItem: (item: string) => void;
-  isOpen: boolean;
-  icon?: ReactNode;
-  label: string;
+  placeholder: string;
+  currentOption: string;
   className?: string;
   isDisabled?: boolean;
 }

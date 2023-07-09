@@ -6,5 +6,4 @@ export interface ButtonProps {
   icon?: ReactNode;
   isDisabled?: boolean;
   className?: string;
-  theme?: 'select';
 }
