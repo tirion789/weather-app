@@ -2,10 +2,11 @@
 import classNames from 'classnames';
 import { useRef, useState } from 'react';
 
+import { useKeyDownOutside } from 'hooks/useKeyDownOutside';
 import ArrowIcon from '@assets/icons/arrow.svg';
 import { Button } from '@ui/Button';
 import { useOutsideClick } from 'hooks/useOutsideClick';
-import { useEnterKeyClose } from 'hooks/useEnterKeyClose';
+import { BUTTONS_ON_KEYBOARD } from 'constans';
 
 import { SelectProps } from './Select.props';
 import styles from './Select.module.scss';
@@ -22,7 +23,7 @@ export const Select = ({
   const selectRef = useRef(null);
 
   useOutsideClick(selectRef, () => setIsOpen(false), isOpen);
-  useEnterKeyClose(selectRef, () => setIsOpen(false), isOpen);
+  useKeyDownOutside(selectRef, () => setIsOpen(false), isOpen, BUTTONS_ON_KEYBOARD.Enter);
 
   const handleClickOpenSelect = () => {
     setIsOpen((prev) => !prev);

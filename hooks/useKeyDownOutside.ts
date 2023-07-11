@@ -1,19 +1,19 @@
 import { useEffect, MutableRefObject } from 'react';
 
-export const useEnterKeyClose = (
+export const useKeyDownOutside = (
   ref: MutableRefObject<HTMLElement | null>,
   handler: () => void,
-  isListenerStopped: boolean
+  isListenerStopped: boolean,
+  targetKey: string
 ) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        (event.key !== 'Enter' && !ref?.current) ||
-        ref.current!.contains(event.target as HTMLElement)
-      ) {
+      if (ref.current!.contains(event.target as HTMLElement)) {
         return;
       }
-      handler();
+      if (event.key === targetKey) {
+        handler();
+      }
     };
     if (!isListenerStopped) {
       document.removeEventListener('keydown', handleKeyDown);
@@ -24,5 +24,5 @@ export const useEnterKeyClose = (
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handler, isListenerStopped, ref]);
+  }, [handler, isListenerStopped, ref, targetKey]);
 };
