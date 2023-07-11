@@ -10,8 +10,10 @@
   border: 1px solid $basic-grey;
   border-radius: 8px;
   color: $light-slate-gray;
+  overflow: hidden;
   padding: 12px 13px;
   position: relative;
+  text-overflow: ellipsis;
 
   &::before {
     background: rgba($basic-white, 0.2);

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './Button.module.scss';
 import { ButtonProps } from './Button.props';
 
-export const Button = ({ onClick, label, icon, isDisabled = false, className }: ButtonProps) => {
+export const Button = ({ onClick, label, icon, isDisabled, className }: ButtonProps) => {
   const buttonClassName = classNames(
     styles.button,
     className,
